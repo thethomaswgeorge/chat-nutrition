@@ -1,0 +1,122 @@
+.goal-summary-card {
+    position: relative;
+    background: #f9f9f9;
+    padding: 12px 16px;
+    border-radius: 10px;
+    margin-top: 12px;
+    font-size: 14px;
+    max-width: 500px;
+}
+
+.nutrient-row {
+    margin-bottom: 16px;
+}
+
+.nutrient-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 0.6s ease;
+}
+
+.nutrient-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #555;
+}
+
+.left-text {
+    font-weight: bold;
+}
+
+.summary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.summary-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #111;
+    margin: 0;
+}
+
+.dismiss-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #999;
+    cursor: pointer;
+    padding: 4px;
+
+    i {
+        pointer-events: none;
+    }
+
+    &:hover {
+        color: #333;
+    }
+}
+
+.shimmer {
+    height: 140px;
+    background: linear-gradient(90deg, #eee 25%, #ddd 37%, #eee 63%);
+    background-size: 400% 100%;
+    animation: shimmer 1.2s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -400px 0;
+    }
+    100% {
+        background-position: 400px 0;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutLeft {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+}
+
+.slide-in {
+    animation: slideInLeft 0.4s ease-out;
+}
+
+.slide-out {
+    animation: slideOutLeft 0.3s ease-in forwards;
+}

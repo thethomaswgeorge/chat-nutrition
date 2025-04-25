@@ -1,0 +1,42 @@
+<!-- Shimmer loader -->
+<div class="goal-summary-card shimmer" *ngIf="isLoading"></div>
+
+<!-- Goal summary content -->
+<div class="goal-summary-card" [ngClass]="{
+  'slide-in': isEntering && !isClosing,
+  'slide-out': isClosing
+}" *ngIf="!isLoading && nutrients?.length > 0">
+    <div class="summary-header">
+        <h3 class="summary-title">Goal Summary</h3>
+        <button class="dismiss-btn" (click)="onDismiss()" aria-label="Close">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    <div class="nutrient-row" *ngFor="let nutrient of nutrients">
+        <div class="nutrient-header">
+            <div class="nutrient-value">
+                {{
+                nutrient.consumed
+                | number : (nutrient.key === "calories" ? "1.0-0" : "1.0-1")
+                }}
+            </div>
+            <div class="nutrient-name">{{ nutrient.label }}</div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" [ngStyle]="{
+          width: nutrient.percent + '%',
+          backgroundColor: nutrient.color
+        }"></div>
+        </div>
+
+        <div class="nutrient-footer">
+            <span class="goal-text">
+                Goal: {{ nutrient.goal }}{{ nutrient.unit }}
+            </span>
+            <span class="left-text" [style.color]="nutrient.color">
+                Left: {{ nutrient.left }}{{ nutrient.unit }}
+            </span>
+        </div>
+    </div>
+</div>

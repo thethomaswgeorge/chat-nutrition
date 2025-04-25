@@ -1,0 +1,49 @@
+# Angular build files
+/dist
+/tmp
+/out-tsc
+/.angular
+.angular/cache
+/angular.json
+
+# Compiled output
+*.js
+*.js.map
+
+# Dependencies
+/node_modules
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment files
+/src/environments/environment*.ts
+
+# Firebase
+.firebase/
+firebase-debug.log
+.firebaserc
+
+# Firebase functions
+/functions/node_modules
+/functions/lib
+/functions/*.log
+/functions/.env
+
+# Optional: VSCode Firebase Functions debugger
+.functions/
+
+# Optional: Firebase Hosting predeploy build artifacts
+/public

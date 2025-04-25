@@ -1,0 +1,105 @@
+<div class="top-bar">
+  <h1 class="app-title">Nutrition Chat</h1>
+  <button class="theme-toggle-icon" (click)="toggleTheme()">
+    <span class="visually-hidden">Toggle light or dark mode</span>
+    <i class="fas" [ngClass]="theme === 'dark' ? 'fa-sun' : 'fa-moon'"></i>
+  </button>
+</div>
+
+<div class="chat-container">
+  <div class="messages">
+    <!-- Chat message bubbles -->
+    <ng-container *ngFor="let message of messages">
+      <ng-container *ngIf="message.text || message.items || message.imageUrl">
+        <div
+          class="message-bubble"
+          [ngClass]="message.user === 'You' ? 'user' : 'assistant'"
+        >
+          <!-- Optional image -->
+          <ng-container *ngIf="message.imageUrl">
+            <img [src]="message.imageUrl" alt="Uploaded" class="chat-image" />
+          </ng-container>
+
+          <!-- Optional text -->
+          <p *ngIf="message.text">{{ message.text }}</p>
+
+
+          <div class="nutrition-summary-card" *ngIf="message.items?.length">
+            <div
+              class="nutrition-row"
+              *ngFor="let item of message.items"
+            >
+              <div class="food-name">{{ item.quantity }} {{ item.name }}</div>
+              <div class="macro-value calories">{{ item.calories }} cal</div>
+              <div class="macro-value carbs">{{ item.carbs }}g carbs</div>
+              <div class="macro-value protein">{{ item.protein }}g protein</div>
+              <div class="macro-value fiber">{{ item.fiber }}g fiber</div>
+              <div class="macro-value fat">{{ item.fat }}g fat</div>
+            </div>
+          </div>
+
+        </div>
+      </ng-container>
+    </ng-container>
+
+    <!-- Typing indicator -->
+    <div class="message-bubble typing assistant" *ngIf="isTyping">
+      <div class="dot-typing"><span></span><span></span><span></span></div>
+    </div>
+
+    <ng-container *ngIf="showGoalSummary">
+      <app-goal-summary
+        [nutrients]="displayedNutrients"
+        [isLoading]="isLoadingGoal"
+        [animate]="true"
+        (dismiss)="showGoalSummary = false"
+        class="slide-in"
+      ></app-goal-summary>
+    </ng-container>
+  </div>
+
+  <div class="input-area">
+    <!-- + Icon Button -->
+    <button
+      class="plus-btn"
+      (click)="triggerFileInput()"
+      aria-label="More options"
+    >
+      <i class="fas fa-plus"></i>
+    </button>
+
+    <!-- Chat Text Input -->
+    <input
+      type="text"
+      [(ngModel)]="userInput"
+      (keydown)="handleKeyDown($event)"
+      placeholder="Log your food..."
+    />
+
+    <div class="camera-overlay" *ngIf="showCamera">
+      <video #video autoplay></video>
+      <canvas #canvas hidden></canvas>
+    </div>
+
+    <!-- Hidden file input for photo selection -->
+    <input
+      type="file"
+      #fileInput
+      accept="image/*"
+      hidden
+      (change)="handleImageUpload($event)"
+    />
+
+    <!-- Send Button -->
+    <button class="send-btn" (click)="sendMessage()">Send</button>
+  </div>
+
+  <!-- Preview UI (optional) -->
+  <img
+    *ngIf="previewUrl"
+    [src]="previewUrl"
+    alt="Preview"
+    class="image-preview"
+  />
+  <canvas #canvas hidden></canvas>
+</div>

@@ -1,0 +1,46 @@
+{
+  "hosting": {
+    "public": "dist/nutrition-chat",
+    "rewrites": [
+      {
+        "source": "/trackFood",
+        "function": "trackFood"
+      },
+      {
+        "source": "/trackFoodImage",
+        "function": "trackFoodImage"
+      },
+      {
+        "source": "/importBrandedDrinks",
+        "function": "importBrandedDrinks"
+      }
+    ]
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs22"
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 8081,
+      "host": "0.0.0.0"
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}

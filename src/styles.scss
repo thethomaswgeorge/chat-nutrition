@@ -1,0 +1,77 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css');
+
+@font-face {
+	font-family: ft47regular;
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/ft47-webfont.eot?v=1647848844);
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/ft47-webfont.eot?v=1647848844?#iefix) format("embedded-opentype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/ft47-webfont.woff2?v=1647848844) format("woff2"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/ft47-webfont.woff?v=1647848844) format("woff"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/ft47-webfont.ttf?v=1647848844) format("truetype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/ft47-webfont.svg?v=1647848944#ft47regular) format("svg");
+	font-weight: 400;
+	font-style: normal
+}
+
+@font-face {
+	font-family: gothambook;
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothambook-webfont.eot?v=1647851087);
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothambook-webfont.eot?v=1647851087?#iefix) format("embedded-opentype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothambook-webfont.woff2?v=1647851087) format("woff2"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothambook-webfont.woff?v=1647851087) format("woff"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothambook-webfont.ttf?v=1647851087) format("truetype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothambook-webfont.svg?v=1647851087#gothambook) format("svg");
+	font-weight: 400;
+	font-style: normal
+}
+
+@font-face {
+	font-family: gothambold;
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-bold-webfont.eot?v=1647851603);
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-bold-webfont.eot?v=1647851603?#iefix) format("embedded-opentype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-bold-webfont.woff2?v=1647851603) format("woff2"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-bold-webfont.woff?v=1647851602) format("woff"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-bold-webfont.ttf?v=1647851602) format("truetype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-bold-webfont.svg?v=1647851602#gothambold) format("svg");
+	font-weight: 400;
+	font-style: normal
+}
+
+@font-face {
+	font-family: gothamblack;
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-black-webfont.eot?v=1647851492);
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-black-webfont.eot?v=1647851492?#iefix) format("embedded-opentype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-black-webfont.woff2?v=1647851492) format("woff2"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-black-webfont.woff?v=1647851492) format("woff"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-black-webfont.ttf?v=1647851492) format("truetype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gotham-black-webfont.svg?v=1647851492#gothamblack) format("svg");
+	font-weight: 400;
+	font-style: normal
+}
+
+@font-face {
+	font-family: gothamlight;
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothamlight-webfont.eot?v=1647938264);
+	src: url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothamlight-webfont.eot?v=1647938264?#iefix) format("embedded-opentype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothamlight-webfont.woff2?v=1647938264) format("woff2"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothamlight-webfont.woff?v=1647938264) format("woff"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothamlight-webfont.ttf?v=1647938264) format("truetype"), url(https://cdn.shopify.com/s/files/1/0300/8128/6188/files/gothamlight-webfont.svg?v=1647938264#gothamlight) format("svg");
+	font-weight: 400;
+	font-style: normal
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0
+}
+
+img {
+	max-width: 100%
+}
+
+ul,
+ol,
+li {
+	margin: 0;
+	list-style: none;
+	padding: 0
+}
+
+body {
+	font-family: gothambook
+}
+
+
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
