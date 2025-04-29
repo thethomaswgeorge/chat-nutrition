@@ -7,7 +7,6 @@
 /angular.json
 
 # Compiled output
-*.js
 *.js.map
 
 # Dependencies
