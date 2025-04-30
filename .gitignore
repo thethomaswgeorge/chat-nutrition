@@ -32,7 +32,7 @@ Thumbs.db
 
 # Firebase
 .firebase/
-firebase-debug.log
+*.log
 .firebaserc
 
 # Firebase functions

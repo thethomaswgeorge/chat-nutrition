@@ -135,10 +135,34 @@ export class ChatComponent implements OnInit {
     if (!file) return;
   
     const reader = new FileReader();
+  
     reader.onload = () => {
-      const base64Image = reader.result as string;
-      this.sendImageToAI(base64Image);
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement('canvas');
+        const MAX_WIDTH = 800;
+        const scale = MAX_WIDTH / img.width;
+  
+        canvas.width = Math.min(img.width, MAX_WIDTH);
+        canvas.height = img.height * scale;
+  
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+  
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+  
+        // ✅ Compress to JPEG at 70% quality
+        const compressedBase64 = canvas.toDataURL('image/jpeg', 0.7);
+
+        debugger;
+  
+        // Send compressed image to OpenAI
+        this.sendImageToAI(compressedBase64);
+      };
+  
+      img.src = reader.result as string;
     };
+  
     reader.readAsDataURL(file);
   }  
 
